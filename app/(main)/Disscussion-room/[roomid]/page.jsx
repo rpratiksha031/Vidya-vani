@@ -517,7 +517,7 @@ export default function DiscussionRoom() {
 
   return (
     <div className="mt-5">
-      <h2 className="text-lg font-bold">{DiscussionRoomData?.subjectOption}</h2>
+      <h2 className="text-lg ">{DiscussionRoomData?.subjectOption}</h2>
       <div className="mt-2 grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2">
           <div className="h-[60vh] bg-secondary border rounded-4xl flex flex-col items-center justify-center relative">
@@ -536,7 +536,7 @@ export default function DiscussionRoom() {
             <h2 className="text-gray-500">{expert?.name}</h2>
 
             {/* Voice Selection */}
-            <div className="mt-4 w-64">
+            <div className="">
               <Select
                 value={selectedVoice?.voiceURI}
                 onValueChange={handleVoiceChange}
@@ -576,8 +576,8 @@ export default function DiscussionRoom() {
             )}
           </div>
 
-          <div className="mt-5 flex items-center justify-center gap-5">
-            <p className="text-gray-500 bg-gray-200 rounded-3xl px-2">
+          <div className="mt-5 items-center justify-center grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6">
+            <p className="text-gray-500 bg-gray-200 rounded-3xl px-2  pd-1">
               {listening ? "Listening..." : "Click to Start"}
               {isProcessing && " (Processing...)"}
               {isSpeaking && " (Speaking...)"}
