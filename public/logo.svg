@@ -1,0 +1,29 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Microphone Base -->
+    <rect x="160" y="100" width="40" height="100" rx="20" fill="#2C3E50"/>
+    <line x1="180" y1="200" x2="180" y2="240" stroke="#2C3E50" stroke-width="8"/>
+    <line x1="160" y1="240" x2="200" y2="240" stroke="#2C3E50" stroke-width="8"/>
+
+    <!-- Digital Signal Waves -->
+    <path d="M120,160 Q150,120 180,160 Q210,200 240,160 Q270,120 300,160" stroke="#3498DB" stroke-width="5" fill="none"/>
+    <circle cx="120" cy="160" r="6" fill="#3498DB"/>
+    <circle cx="150" cy="140" r="8" fill="#3498DB"/>
+    <circle cx="180" cy="120" r="10" fill="#3498DB"/>
+    <circle cx="210" cy="140" r="8" fill="#3498DB"/>
+    <circle cx="240" cy="160" r="6" fill="#3498DB"/>
+
+    <!-- Futuristic Circuit Lines -->
+    <line x1="80" y1="180" x2="100" y2="180" stroke="#F39C12" stroke-width="3"/>
+    <circle cx="100" cy="180" r="4" fill="#F39C12"/>
+    <line x1="300" y1="180" x2="320" y2="180" stroke="#F39C12" stroke-width="3"/>
+    <circle cx="320" cy="180" r="4" fill="#F39C12"/>
+
+    <!-- Name Text -->
+    <text x="50" y="290" font-family="'Poppins', sans-serif" font-size="40" fill="#2C3E50" font-weight="bold">Vidya-Vani</text>
+    
+    <!-- Circular Tagline -->
+    <path id="curve" d="M90,350 A160,160 0 1,1 310,350" fill="transparent"/>
+    <text font-family="'Poppins', sans-serif" font-size="18" fill="#2C3E50" font-weight="bold">
+        <textPath href="#curve" startOffset="20%">The Digital Pulse of Learning</textPath>
+    </text>
+</svg>
