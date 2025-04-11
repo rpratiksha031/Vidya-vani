@@ -519,8 +519,8 @@ export default function DiscussionRoom() {
     <div className="mt-5">
       <h2 className="text-lg ">{DiscussionRoomData?.subjectOption}</h2>
       <div className="mt-2 grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div className="lg:col-span-2">
-          <div className="h-[60vh] bg-secondary border rounded-4xl flex flex-col items-center justify-center relative">
+        <div className="lg:col-span-2 relative">
+          <div className="h-[60vh] bg-secondary border rounded-4xl flex flex-col items-center justify-center ">
             {expert?.avatar ? (
               <Image
                 src={expert.avatar}
@@ -541,7 +541,7 @@ export default function DiscussionRoom() {
                 value={selectedVoice?.voiceURI}
                 onValueChange={handleVoiceChange}
               >
-                <SelectTrigger className="bg-white">
+                <SelectTrigger className="bg-yellow-100 w-20 h-[2px]">
                   <SelectValue placeholder="Select a voice" />
                 </SelectTrigger>
                 <SelectContent>
@@ -558,8 +558,8 @@ export default function DiscussionRoom() {
               <UserButton />
             </div>
             <div> */}
-            {DiscussionRoomData?.subjectOption == "Mock interview" ? (
-              <div className="gap-5className  items-center h-screen ">
+            {DiscussionRoomData?.subjectOption == "Mock interview" && (
+              <div className="gap-5  items-center h-screen ">
                 <Webcam
                   height={500}
                   width={500}
@@ -569,15 +569,11 @@ export default function DiscussionRoom() {
                   <WebcamPermissionButton className="ml-15" />
                 </div>
               </div>
-            ) : (
-              <div className="p-5 bg-gray-200 px-10 rounded-lg absolute bottom-10 right-10">
-                <UserButton />
-              </div>
             )}
           </div>
 
-          <div className="mt-5 items-center justify-center grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6">
-            <p className="text-gray-500 bg-gray-200 rounded-3xl px-2  pd-1">
+          <div className="mt-6 items-center justify-center grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-5 mx-9">
+            <p className="text-gray-500 bg-gray-200 rounded-3xl px-2  ">
               {listening ? "Listening..." : "Click to Start"}
               {isProcessing && " (Processing...)"}
               {isSpeaking && " (Speaking...)"}
@@ -596,7 +592,7 @@ export default function DiscussionRoom() {
                 SpeechRecognition.stopListening();
               }}
               disabled={!listening || isProcessing}
-              className="bg-red-500 hover:bg-red-600"
+              className="bg-red-500 hover:bg-red-600 "
             >
               Stop
             </Button>
