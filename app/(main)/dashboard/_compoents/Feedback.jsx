@@ -8,8 +8,11 @@ import modules from "@/services/Options";
 import { Button } from "@/components/ui/button";
 import moment from "moment";
 import Link from "next/link";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 function Feedback() {
   const [discussionRoomList, setDiscussionRoomList] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   const convex = useConvex();
   const { userData } = useContext(UserContext);
 
@@ -18,26 +21,46 @@ function Feedback() {
   useEffect(() => {
     userData && GeDiscussionRooms();
   }, [userData]);
+
   const GeDiscussionRooms = async () => {
     const result = await convex.query(api.DiscussionRoom.GetAllDiscussionRoom, {
       uid: userData?._id,
     });
-    // console.log("Get all dis room result", result);
     setDiscussionRoomList(result);
-    // console.log("uid", userData._id);
   };
 
   const GetAbstractImages = (option) => {
     const coachingOption = ExpertsList.find((item) => item.name === option);
     return coachingOption?.abstract || "/img1.jpg";
   };
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div>
-      <h2 className="font-bold text-xl">feeadback</h2>
-      {discussionRoomList?.length == 0 && (
-        <h2 className="text-back"> You don't have any privious lecture</h2>
-      )}
-      <div className="mt-5">
+    <div className="bg-white p-5 rounded-lg shadow-md h-auto">
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={toggleOpen}
+      >
+        <h2 className="font-bold text-xl">Your previous Feedback</h2>
+        {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+      </div>
+
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{
+          maxHeight: isOpen ? "5000px" : "0",
+          opacity: isOpen ? 1 : 0,
+          marginTop: isOpen ? "1.25rem" : "0",
+          padding: isOpen ? "0" : "0",
+        }}
+      >
+        {discussionRoomList?.length == 0 && (
+          <h2 className="text-gray-500">You don't have any previous lecture</h2>
+        )}
+
         {discussionRoomList?.map(
           (item, index) =>
             (item.subjectOption == "Mock interview" ||
