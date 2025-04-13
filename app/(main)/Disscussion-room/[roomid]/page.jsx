@@ -517,7 +517,9 @@ export default function DiscussionRoom() {
 
   return (
     <div className="mt-5">
-      <h2 className="text-lg ">{DiscussionRoomData?.subjectOption}</h2>
+      <h2 className="text-lg font-bold underline ">
+        {DiscussionRoomData?.subjectOption}
+      </h2>
       <div className="mt-2 grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2 relative">
           <div className="h-[60vh] bg-secondary border rounded-4xl flex flex-col items-center justify-center ">
@@ -676,7 +678,7 @@ export default function DiscussionRoom() {
           {/* Feedback/Notes Section */}
           <div className="mt-5">
             {!enablefeedbackNotes ? (
-              <p className="text-gray-400 text-sm">
+              <p className="text-black text-sm   rounded-3xl px-2">
                 At the end of your conversation, we will automatically generate
                 feedback/notes from your conversation.
               </p>

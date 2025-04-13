@@ -44,7 +44,7 @@ function Feedback() {
         className="flex justify-between items-center cursor-pointer"
         onClick={toggleOpen}
       >
-        <h2 className="font-bold text-xl">Your previous Feedback</h2>
+        <h2 className="font-bold md:text-xl">Your previous Feedback</h2>
         {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
       </div>
 

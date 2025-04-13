@@ -3,10 +3,15 @@ import AppHeader from "./_components/AppHeader";
 function DashboardLayout({ children }) {
   const currentYear = new Date().getFullYear();
   return (
-    <div>
+    <div className="bg-[url('/study2.avif')] bg-cover bg-center ">
       <AppHeader />
 
-      <div className="mt-20 md:px-20 lg:px-32 xl:px-48 2xl:px-56  ">
+      <div
+        className="mt-20 md:px-20 lg:px-32 xl:px-48 2xl:px-56  
+      
+        
+      "
+      >
         {children}
       </div>
 

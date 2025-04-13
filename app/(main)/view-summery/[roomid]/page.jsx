@@ -35,10 +35,10 @@ function ViewSummery() {
         </div>
         <div>
           <h2 className="font-bold text-lg">{DiscussionRoomData?.topic}</h2>
-          <h2 className="text-gray-400">{DiscussionRoomData?.subjectOption}</h2>
+          <h2 className="text-gray-800">{DiscussionRoomData?.subjectOption}</h2>
         </div>
 
-        <h2 className="text-gray-400 ">
+        <h2 className="text-gray-800 ">
           {moment(DiscussionRoomData?._creationTime).fromNow()}
         </h2>
       </div>
