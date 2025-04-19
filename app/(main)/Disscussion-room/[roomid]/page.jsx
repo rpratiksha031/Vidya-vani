@@ -57,6 +57,7 @@ export default function DiscussionRoom() {
   // for feedback and notes
   const [enablefeedbackNotes, setEnableFeedbackNotes] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loading1, setLoading1] = useState(false);
   const [feedbackContent, setFeedbackContent] = useState("");
   const [showFeedback, setShowFeedback] = useState(false);
 
@@ -515,25 +516,22 @@ export default function DiscussionRoom() {
     updateUseTokenMethod();
   }, [conversation, userData, updateUserToken, setUserData]);
 
-  useEffect(() => {
-    // Simulate loading or run actual data fetch here
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2 seconds delay for demo
-
-    return () => clearTimeout(timer); // Cleanup if component unmounts
-  }, []);
-
-  if (loading) {
+  // loadding
+  if (loading1) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading, please wait...</p>
-        </div>
+      <div className="flex items-center justify-center h-screen">
+        <LoaderCircle className="animate-spin" size={50} />
       </div>
     );
   }
+  if (!DiscussionRoomData) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <LoaderCircle className="animate-spin" size={50} />
+      </div>
+    );
+  }
+
   return (
     <div className="mt-5">
       <h2 className="text-lg font-bold underline ">

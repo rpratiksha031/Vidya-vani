@@ -28,7 +28,7 @@ function AppHeader() {
       </h2>
       <Button
         onClick={handleSignIn}
-        className=" underline  md:font-bold  text-white bg-pink-40 hover:bg-pink-500 hover:shadow-lg transition-all duration-300 ease-in-out lg:rounded-3xl lg:font-bold lg:text-xl lg:px-6 lg:py-2 md:text-sm md:px-4 md:py-2"
+        className=" underline  md:font-bold  text-white bg-pink-40 hover:bg-pink-500 hover:shadow-lg transition-all duration-300 ease-in-out  lg:font-bold lg:text-xl lg:px-6 lg:py-2 md:text-sm md:px-4 md:py-2"
         variant="secondary"
       >
         solveDoubts
