@@ -59,7 +59,7 @@ function UserInputDailog({ children, ExpertsList }) {
             <DialogDescription asChild>
               <div className="mt-3">
                 <h2 className=" text-black font-medium">
-                  So tell me something ...you wanna learn for {ExpertsList.name}{" "}
+                  Type here you want to disccuss about {ExpertsList.name}{" "}
                 </h2>
                 <Textarea
                   placeholder="Enter your topic here ..."
