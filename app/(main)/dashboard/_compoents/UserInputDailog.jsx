@@ -91,11 +91,19 @@ function UserInputDailog({ children, ExpertsList }) {
                   })}
                 </div>
                 <div className=" flex justify-end gap-5 mt-5">
-                  <DialogClose>
-                    <Button asChild variant={"ghost"}>
+                  {/* <DialogClose>
+                    <Button asChild variant={"ghost"}
+                      className="bg-gray-500 text-white hover:bg-gray-600">
                       Cancel
                     </Button>
-                  </DialogClose>
+                  </DialogClose> */}
+                  <Button
+                    variant={"outline"}
+                    className="bg-red-500 text-white hover:bg-red-600"
+                    onClick={() => setOpenDailog(false)}
+                  >
+                    cancel
+                  </Button>
 
                   <Button
                     disabled={!topic || !selectTeacher || loading}

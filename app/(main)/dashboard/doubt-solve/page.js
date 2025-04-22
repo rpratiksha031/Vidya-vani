@@ -17,7 +17,6 @@ function Page() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading or run actual data fetch here
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000); // 2 seconds delay for demo

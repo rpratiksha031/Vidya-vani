@@ -22,7 +22,7 @@ function ViewSummery() {
   };
 
   return (
-    <div className="  ">
+    <div className=" mt-24 mb-24 ">
       <div className="flex justify-between items-end">
         <div className="flex items-center ">
           <Image

@@ -15,7 +15,7 @@ function FeatureAssistants() {
   const user = useUser();
   // console.log(ExpertsList);
   return (
-    <div className=" mt-24 mb-24 ">
+    <div className=" mt-20 mb-20 ">
       <div className="">
         <div className="flex justify-between items-center">
           <div>
@@ -24,36 +24,36 @@ function FeatureAssistants() {
             </h2>
           </div>
           <ProfileDailog>
-            <Button className="ml-2 px-5 py-3 bg-indigo-500 text-white rounded-full hover:bg-indigo-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 shadow-2xl mb-10 font-bold text-xl">
-              my Profile
+            <Button className="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-medium">
+              My Profile
             </Button>
           </ProfileDailog>
         </div>
       </div>
-      <div className=" shadow-2xl rounded-3xl py-5 px-5 ">
+      <div className=" shadow-2xl rounded-3xl  grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-10 mt-10 ">
         {ExpertsList.map((option, index) => (
           <div
             key={index}
-            className="  mt-3 bg-[url('/study2.avif')] rounded-3xl  flex flex-col justify-between items-center  shadow-xl py-10 lg:py-20 lg:mb-20 mb-10 bg-no-repeat bg-cover"
+            className="  mt-3 bg-[url('/study2.avif')] rounded-3xl  flex flex-col justify-between items-center  shadow-xl  bg-no-repeat bg-cover "
           >
             <UserInputDailog ExpertsList={option}>
               <div
                 key={index}
                 id={option.name}
-                className=" flex flex-col justify-center bg-amber-100 items-center shadow-2xl rounded-2xl p-10 lg:p-20"
+                className=" flex flex-col justify-center bg-amber-100 items-center shadow-2xl rounded-2xl mt-6 lg:mt-5 lg:mb-0 mb-5  mx-5 p-5 hover:scale-105 duration-300 text-sm"
               >
                 <Image
                   src={option.icon}
                   alt={option.name}
                   width={150}
                   height={150}
-                  className=" h-[80px] w-[80px] lg:h-[200px] lg:w-[200px] mt-3 hover:rotate-12 cursur-pointer rounded-full "
+                  className=" h-[20px] w-[20px] lg:h-[80px] lg:w-[80px] mt-3 hover:rotate-12 cursur-pointer rounded-full "
                 />
 
                 <h2
-                  className="mt-5 bg-blue-200 p-6 rounded-3xl transform hover:scale-110  duration-300 text-bold text-black font-bold  
+                  className="mt-5 bg-blue-200 rounded-2xl transform hover:scale-110  duration-300  text-black m-2 p-2 text-center  cursor-pointer 
                 
-                t  shadow-lg hover:shadow-cyan-600 transition-shadow 
+                font-bold  shadow-lg hover:shadow-cyan-600 transition-shadow 
                 tracking-wide uppercase border-blue-600  
                 "
                 >

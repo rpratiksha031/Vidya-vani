@@ -83,7 +83,7 @@ const solveDoubt = async (text, imageBase64) => {
 
     // Call the OpenAI API through OpenRouter
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo", // Standard model
+      model: "deepseek/deepseek-r1:free",
       messages: messages,
       max_tokens: 1000,
       temperature: 0.7,
