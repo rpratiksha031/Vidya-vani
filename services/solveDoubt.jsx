@@ -1,6 +1,5 @@
-// FILE: services/solveDoubt.jsx
 import OpenAI from "openai";
-// Add Tesseract.js for OCR
+
 import Tesseract from "tesseract.js";
 
 const openai = new OpenAI({
@@ -81,7 +80,7 @@ const solveDoubt = async (text, imageBase64) => {
       },
     ];
 
-    // Call the OpenAI API through OpenRouter
+    // Calliinnngg  the OpenAI API through OpenRouter
     const response = await openai.chat.completions.create({
       model: "deepseek/deepseek-r1:free",
       messages: messages,

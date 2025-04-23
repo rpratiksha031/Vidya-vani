@@ -16,7 +16,7 @@ function SummaryPage() {
   const { roomid } = useParams();
   const [copied, setCopied] = useState(false);
 
-  // Fetch the discussion room data (including feedback)
+  // Fetch the discussion room data
   const discussionRoomData = useQuery(api.DiscussionRoom.GetDiscussionRoom, {
     id: roomid,
   });
@@ -76,8 +76,6 @@ function SummaryPage() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Additional summary statistics or visualizations could go here */}
     </div>
   );
 }

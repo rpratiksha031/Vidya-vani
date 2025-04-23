@@ -106,12 +106,10 @@ function Page() {
 
   return (
     <div className="flex flex-col   h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white shadow-sm border-b py-4 px-6">
         <h1 className="md:text-2xl font-bold text-center">Doubt Solver</h1>
       </header>
 
-      {/* Chat History */}
       <div className="flex-1 overflow-y-auto p-4">
         {chatHistory.length === 0 ? (
           <div className="flex items-center justify-center h-full">

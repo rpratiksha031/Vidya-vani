@@ -29,7 +29,11 @@ const AIModel = async (topic, coachingOption, msg) => {
       };
     }
 
-    const PROMPT = option.prompt.replace("{user_topic}", topic);
+    // const PROMPT = option.prompt.replace("{user_topic}", topic);
+
+    const PROMPT = option.prompt
+      .replace("{user_topic}", topic)
+      .replace("{expert_name}", Teachers.name);
 
     // Debug log API key (only first/last few characters for security)
     const apiKey = process.env.NEXT_PUBLIC_AI_OPENROUTER || "";

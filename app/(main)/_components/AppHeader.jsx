@@ -33,7 +33,7 @@ function AppHeader() {
       >
         solveDoubts
       </Button>
-      <UserButton />
+      <UserButton variant="secondary" />
     </div>
   );
 }

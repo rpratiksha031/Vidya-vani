@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" /> <!-- Indigo 600 -->
+      <stop offset="50%" stop-color="#3B82F6" /> <!-- Blue 500 -->
+      <stop offset="100%" stop-color="#8B5CF6" /> <!-- Purple 500 -->
+    </linearGradient>
+    <!-- Glow effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGradient)" />
+  
+  <!-- "V" stylized as an open book -->
+  <g filter="url(#glow)">
+    <!-- Left page of book -->
+    <path d="M20 17 L32 42 L32 24 Q32 20, 28 19 Z" fill="#ffffff" opacity="0.9" />
+    <!-- Right page of book -->
+    <path d="M44 17 L32 42 L32 24 Q32 20, 36 19 Z" fill="#ffffff" opacity="0.9" />
+  </g>
+  
+  <!-- Sound wave elements representing "Vani" (voice) -->
+  <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <!-- Center sound waves -->
+    <path d="M32 46 L32 52" />
+    <!-- Left sound waves -->
+    <path d="M26 48 L26 50" />
+    <path d="M20 47 L20 51" />
+    <!-- Right sound waves -->
+    <path d="M38 48 L38 50" />
+    <path d="M44 47 L44 51" />
+  </g>
+</svg>

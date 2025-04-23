@@ -4,16 +4,20 @@ import { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { UserButton } from "@stackframe/stack";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation"; // Import the router
+import { useRouter } from "next/navigation";
+import { useUser } from "@stackframe/stack";
 
 export default function Home() {
   const [showUserButton, setShowUserButton] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
   const currentYear = new Date().getFullYear();
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
+  const User = useUser();
+
+  // console.log("User in first page", User);
+  // console.log("primary_mail ", User?.primaryEmailVerified);
 
   useEffect(() => {
-    // Set animation as complete after initial render
     const timer = setTimeout(() => {
       setAnimationComplete(true);
     }, 1500);
@@ -21,44 +25,62 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Redirect to dashboard if the user is already signed in and verified
+  useEffect(() => {
+    if (User?.primaryEmailVerified === true) {
+      // console.log("User is verified, redirecting to dashboard");
+      router.push("/dashboard");
+    }
+  }, [User, router]);
+
   const handleGetStarted = () => {
     setShowUserButton(true);
   };
 
   // Handle user sign in and navigation to dashboard
   const handleSignIn = () => {
-    // Here you would typically have authentication logic
-    // For now, we'll just redirect to the dashboard
     router.push("/dashboard");
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-br from-blue-50 to-indigo-100 p-4 sm:p-6 md:p-8">
-      <div className="w-full max-w-7xl mx-auto flex-grow flex flex-col items-center justify-center py-8 md:py-12">
+      <div className="w-full max-w-7xl mx-auto flex-grow flex flex-col items-center justify-center py-8 md:py-12 ">
         {showUserButton ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl flex flex-col items-center w-full max-w-md mx-auto"
+            className=" bg-cyan-200 rounded-lg p-6 sm:p-8 md:p-10  shadow-xl flex flex-col items-center w-full max-w-md mx-auto"
           >
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
-              Welcome Back!
-            </h2>
-            <div className="mb-6">
-              <UserButton onSignIn={handleSignIn} />
+            {User?.primaryEmailVerified === true ? (
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
+                Welcome Back! {User?.displayName}
+              </h2>
+            ) : (
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
+                Welcome! Please Sign in
+              </h2>
+            )}
+            <div className="mb-6 flex justify-center">
+              {/* Styled UserButton with custom button appearance */}
+              <div className="rounded-full p-1 bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-600 shadow-lg hover:shadow-xl transition-all">
+                <UserButton onSignIn={handleSignIn} variant="secondary" />
+              </div>
             </div>
             <div className="flex flex-col w-full gap-3">
-              <Button
-                onClick={handleSignIn}
-                className="w-full bg-indigo-600 hover:bg-indigo-700"
-              >
-                Go to Dashboard
-              </Button>
+              {User?.primaryEmailVerified === true && (
+                <Button
+                  onClick={handleSignIn}
+                  className="w-full bg-indigo-600 hover:bg-indigo-700"
+                >
+                  Go to Dashboard
+                </Button>
+              )}
+
               <Button
                 variant="outline"
                 onClick={() => setShowUserButton(false)}
-                className="w-full"
+                className="w-full rounded-2x bg-gray-200 hover:bg-gray-300 text-gray-800 border-gray-300"
               >
                 Go Back
               </Button>
@@ -106,7 +128,6 @@ export default function Home() {
                   </motion.div>
                 </div>
 
-                {/* Animated particles/elements */}
                 {[...Array(12)].map((_, i) => (
                   <motion.div
                     key={i}

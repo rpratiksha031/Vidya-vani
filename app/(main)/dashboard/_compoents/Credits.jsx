@@ -9,6 +9,8 @@ import { Wallet2 } from "lucide-react";
 function Credits() {
   const { userData } = useContext(UserContext);
   const User = useUser();
+  console.log("userData", userData);
+  console.log("User", User);
 
   const calculateProgress = () => {
     if (userData?.subscriptionId) {
