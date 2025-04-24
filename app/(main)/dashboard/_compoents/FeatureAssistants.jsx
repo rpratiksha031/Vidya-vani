@@ -24,7 +24,7 @@ function FeatureAssistants() {
             </h2>
           </div>
           <ProfileDailog>
-            <Button className="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-medium">
+            <Button className="rounded-full bg-blue-600 text-white flex items-center justify-center  text-sm font-bold h-16 w-16 lg:h-20 lg:w-20 shadow-lg hover:shadow-blue-500 transition-all duration-300 ease-in-out">
               My Profile
             </Button>
           </ProfileDailog>

@@ -50,7 +50,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className=" bg-blue-300 rounded-lg p-6 sm:p-8 md:p-10  shadow-xl flex flex-col items-center w-full max-w-md mx-auto"
+            className=" bg-blue-200 rounded-lg p-6 sm:p-8 md:p-10  shadow-xl flex flex-col items-center w-full max-w-md mx-auto"
           >
             {User?.primaryEmailVerified === true ? (
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
