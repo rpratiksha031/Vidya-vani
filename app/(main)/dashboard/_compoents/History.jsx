@@ -65,9 +65,9 @@ function History() {
 
         {discussionRoomList?.map(
           (item, index) =>
-            (item.subjectOption == "Lecture on any topic" ||
-              item.subjectOption == "Enhance Languages skill" ||
-              item.subjectOption == "meditation") && (
+            (item.subjectOption == "Attend a lecture" ||
+              item.subjectOption == "Career guidance" ||
+              item.subjectOption == "Meditation and mental health support") && (
               <div
                 key={index}
                 className="border-b-[2px] pb-4 mb-4 group flex justify-between items-center cursor-pointer"

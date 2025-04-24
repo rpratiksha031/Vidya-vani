@@ -64,7 +64,7 @@ function Feedback() {
         {discussionRoomList?.map(
           (item, index) =>
             (item.subjectOption == "Mock interview" ||
-              item.subjectOption == "Ques ans prep") && (
+              item.subjectOption == "prepare Q&A on any topic") && (
               <div
                 key={index}
                 className="border-b-[2px] pb-4 mb-4 group flex justify-between items-center cursor-pointer"
